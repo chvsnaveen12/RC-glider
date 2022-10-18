@@ -20,6 +20,7 @@ The wiring for the transmitter remained entirely the same, except I didn't bothe
 |   d7        | Pitch Servo |
 
 Connections to Motor1 and Motor2 are through IRLZ44N power MOSFETS.
+
 The NRF24L01 is connected in the original way.
 
 ## Image
