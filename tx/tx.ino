@@ -3,7 +3,7 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 const uint64_t pipeOut = 0xE9E8F0F0E1LL;   //IMPORTANT: The same as in the receiver 0xE9E8F0F0E1LL | Bu adres alıcı ile aynı olmalı
-RF24 radio(9, 10); // select CE,CSN pin | CE ve CSN pinlerin seçimi
+RF24 radio(7, 8); // select CE,CSN pin | CE ve CSN pinlerin seçimi
 struct Signal {
   byte throttle;
   byte pitch;
@@ -50,9 +50,9 @@ void loop()
 {
   // Control Stick Calibration | Kumanda Kol Kalibrasyonları
   // Setting may be required for the correct values of the control levers. | :Kontrol kolların doğru değerleri için ayar gerekebilir.
-  data.throttle = mapJoystickValues( analogRead(A4), 0, 425, 900, false ); // "true" or "false" for signal direction | "true" veya "false" sinyal yönünü belirler
-  data.roll = mapJoystickValues( analogRead(A2), 40, 490, 830, false );      // "true" or "false" for servo direction | "true" veya "false" servo yönünü belirler
-  data.pitch = mapJoystickValues( analogRead(A5), 0, 448, 950, false );     // "true" or "false" for servo direction | "true" veya "false" servo yönünü belirler
+  data.throttle = mapJoystickValues( analogRead(A0), 0, 425, 900, false ); // "true" or "false" for signal direction | "true" veya "false" sinyal yönünü belirler
+  data.roll = mapJoystickValues( analogRead(A1), 40, 490, 830, false );      // "true" or "false" for servo direction | "true" veya "false" servo yönünü belirler
+  data.pitch = mapJoystickValues( analogRead(A2), 0, 448, 950, false );     // "true" or "false" for servo direction | "true" veya "false" servo yönünü belirler
 
   rfdata.mr = constrain((data.roll < 128) ? data.throttle + 127 - data.roll : data.throttle, 0, 255);
   rfdata.ml = constrain((data.roll > 127) ? data.throttle + data.roll - 128 : data.throttle, 0, 255);
