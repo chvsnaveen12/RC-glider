@@ -19,7 +19,7 @@ byte pitch;
 Signal data;
 
 const uint64_t pipeIn = 0xE9E8F0F0E1LL;
-RF24 radio(9, 10); 
+RF24 radio(7, 8); 
 
 void ResetData()
 {
