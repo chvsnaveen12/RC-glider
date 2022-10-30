@@ -1,6 +1,6 @@
 # RC-glider
 Created Transmitter and Receiver pair for a lightweight powered RC glider. 
-This is a slightly modified version of the Tx and RX found (here.)[https://www.youtube.com/watch?v=9SMyBN-B3Vo]
+This is a slightly modified version of the Tx and RX found [here.](https://www.youtube.com/watch?v=9SMyBN-B3Vo)
 
 ![image](https://user-images.githubusercontent.com/90030628/196432373-cfe84476-e6af-4503-9e92-a232af86ec83.png)
 
